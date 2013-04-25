@@ -409,6 +409,18 @@ public class WorldEditPlugin extends JavaPlugin {
             return null;
         }
     }
+    
+    /**
+     * Gets the region selection for the player using a string parameter for the player's name.
+     *
+     * @param playerString
+     * @return the selection or null if there was none
+     */
+    public Selection getSelection(String playerString) {
+        Player player = getServer().getPlayer(playerString);
+        
+        return this.getSelection(player);
+    }
 
     /**
      * Sets the region selection for a player.
